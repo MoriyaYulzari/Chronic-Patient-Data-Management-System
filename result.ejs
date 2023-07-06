@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <title>Results</title> <!--sets the title of the HTML document -->
+    <style>
+        body {
+            display: flex; /*flexible box layout for its child elements*/
+            flex-direction: column; /*stacks the flex items vertically.*/
+            justify-content: center; /*centers the flex items along the main axis (vertical)*/
+            align-items: center; /*centers the flex items along the cross axis (horizontal)*/
+            height: 100vh; /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+            margin: 0; /*removes any default margins applied to the body element.*/
+            padding: 0; /*removes any default padding applied to the body element*/
+            background-image: url("Background/background_color.jpg"); /*sets the background image*/
+            background-repeat: no-repeat; /*prevents the background image from repeating*/
+            background-size: cover; /*scales the background image to cover the entire body element*/
+            font-weight: 300; /*sets the font weight of the tex*/
+            font-family: 'Open Sans', sans-serif; /*sets the font*/
+        }
+    
+        h2 {
+            direction: ltr; /*sets the text direction to left-to-right*/
+            text-align: center; /*centers the text horizontally within the element*/
+            margin: 2px 0; /* sets the top and bottom margin to 2, and lef, right to 0*/
+            font-weight: bold /*sets the font to bold*/
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /*sets the background color of the container to a semi-transparent white*/
+            padding: 15px; /*adds 15 pixels of padding around the content of the container.*/
+            border-radius: 5px; /*gives the container rounded corners*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /*adds a subtle box shadow to the container, giving it a slight elevation effect*/
+            max-width: 800px; /* sets the max-width */
+            margin-top: 10px; /* sets the margin-top */
+        }
+
+        table {
+            border-collapse: collapse; /*the borders of table cells should be collapsed into a single border*/
+            border: 1px solid #ccc; /*sets the border properties of the table to have a 1-pixel width, a solid line style, and a color*/
+            width: 100%; /*sets the width to 100%, ensuring it spans the entire available width. */
+        }
+
+        th, td { /*table headers and table cells*/
+            padding: 10px; /*adds 10 pixels of padding within each table cell, creating space between the content and the cell boundaries.*/
+            border: 2px solid #ccc; /*sets the border properties of each table cell to have a 2-pixel width, a solid line style, and a color*/
+            text-align: left; /*aligns the text within each table cell to the left*/
+        }
+
+        .label { /*styles to all elements with the class "label*/
+            text-align: left; /*aligns the text within the elements with the "label" class to the left.*/
+            width: 100px; /*sets a fixed width of 100 pixels for the elements with the "label" class*/
+        }
+
+        .stuff { /*ebery stuff for the function- label/ confidence*/
+            text-align: left;
+        }
+
+        li { /*list items*/
+            margin-top: 5px; /*adds a 5-pixel margin at the top */
+            margin-bottom: 5px; /*adds a 5-pixel margin at the bottom*/
+        }
+    </style>
+</head>
+<body>
+    <h2>Patient's image top 10 tags:</h2> <!--page title-->
+
+    <div class="container">
+        <% if (tags && tags.length > 0) { %> <!--checks if there are any "tags" available, and if the length of the "tags" array is greater than 0-->
+            <table border="1"> <!--adds a border around the table-->
+                <tr> <!--represent a table row  
+                    The headers are labeled as "Label" and "Confidence". The class "label" is applied to both headers.-->
+                    <th class="label">Label</th>
+                    <th class="label">Confidence</th>
+                </tr>
+                <% tags.forEach(({ label, confidence }) => { %>
+                    <!-- loop that iterates over the "tags" array and extracts the "label" and "confidence" properties of each object in the array.-->
+                    <tr>
+                        <!-- table row and table data cell respectively. The "label" and "confidence" values are interpolated into the table cells-->
+                        <td class="stuff"><%= label %></td>
+                        <td class="stuff"><%= confidence %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        <% } else { %> <!--no tags are available or the "tags" array is empty-->
+            <p>No tags found for the image.</p> <!--renders a paragraph element with a message-->
+        <% } %>
+    </div>
+</body>
+</html>

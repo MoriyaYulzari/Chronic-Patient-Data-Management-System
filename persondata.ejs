@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <!--Imports the 'Open Sans' font from the Google Fonts API.-->
+    <title>Find Patients</title>
+    <style>
+      body {
+        display: flex; /*flexible box layout for its child elements*/
+        justify-content: center; /*centers the flex items along the main axis (vertical)*/
+        align-items: center; /* centers the flex items along the cross axis (horizontal)*/
+        height: 100vh; /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+        margin: 0; /*removes any default margins applied to the body element.*/
+        padding: 0; /*removes any default padding applied to the body element*/
+        background-image: url("Background/background_color.jpg"); /*sets the background image*/
+        background-repeat: no-repeat; /*prevents the background image from repeating*/
+        background-size: cover; /*scales the background image to cover the entire body element*/
+        font-weight: 300; /*sets the font weight of the tex*/
+        font-family: 'Open Sans', sans-serif; /*sets the font*/
+      }
+
+      h2 {
+            direction: ltr; /*sets the text direction to left-to-right*/
+            text-align: center; /*centers the text horizontally within the element*/
+            margin: 50px 0;  /* sets the top and bottom margin to 50, and lef, right to 0*/
+            font-weight: bold; /*sets the font to bold*/
+            position: absolute; /*relative to the nearest positioned ancestor or the entire document if no positioned ancestor exists.*/
+            top: 0; /* Positions the top edge of the elements at the top of their containing element or the document.*/
+            width: 100%; /* Sets the width of the element to 100% of their containing element's width.*/
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.8); /*Sets the background color of the element*/
+        padding: 20px;  /*adds 20 pixels of padding around the content of the container.*/
+        border-radius: 5px; /*gives the container rounded corners*/
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /*adds a subtle box shadow to the container, giving it a slight elevation effect*/
+        margin-top: 40px; /*sets margin-top to create space between h2 and container */
+      }
+
+      table {
+        border-collapse: collapse; /*the borders of table cells should be collapsed into a single border*/
+        border: 1px solid #ccc; /*sets the border properties of the table to have a 1-pixel width, a solid line style, and a color*/
+        width: 600px; /*Sets the width of the element to 600 pixels.*/
+      }
+
+      th, td {
+        padding: 15px; /*adds 15 pixels of padding within each table cell, creating space between the content and the cell boundaries.*/
+        border: 2px solid #ccc; /*sets the border properties of each table cell to have a 2-pixel width, a solid line style, and a color*/
+        text-align: left; /*aligns the text within each table cell to the left*/
+      }
+    </style>
+</head>
+<body>
+  <h2>The requested patient medical details:</h2> <!-- Displays a heading for the requested patient's medical details.-->
+  <div class="container">
+    <table>
+      <!--Define table rows, table header cells, and table data cells for each patient detail.-->
+      <tr>
+        <th>ID</th>
+        <td><%= patients.ID %></td> <!--Displays the ID of the patient using embedded JavaScript code to access the patient data.-->
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <td><%= patients.firstname %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= patients.lastname %></td>
+      </tr>
+      <tr>
+        <th>Birthdate</th>
+        <td><%= patients.birthdate %></td>
+      </tr>
+      <tr>
+        <th>Medical Conditions</th>
+        <td><%= patients.medicalCondition.join(', ') %></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
