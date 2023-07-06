@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chat</title>
+    <link rel="stylesheet" href="style_chat.css">
+    <link rel="shortcut icon" href="Background/favicon.png" type="">
+</head>
+<body>
+    <div class="chat-window" id="chatWindow"></div>
+    <form id="questionForm" action="/ask" method="get"> <!--: Creates element and sets its action to "/ask" (the endpoint to submit the question) 
+        and method to "get" (to retrieve data from the server).-->
+        <input type="text" name="question" id="questionInput" placeholder="Enter your question" required/>
+        <!--Creates an input field of type "text" with the name "question", id "questionInput", and a placeholder text "Enter your question". 
+            The "required" attribute specifies that the field must be filled before submitting the form.-->
+        <input type="submit" value="Ask"> <!--Creates a submit button for the form with the label "Ask".-->
+    </form>
+
+    <script>
+        const chatWindow = document.getElementById('chatWindow'); /* Retrieves the chat window element by its id and assigns it to the chatWindow variable.*/
+        const questionForm = document.getElementById('questionForm'); /*Retrieves the question form element by its id and assigns it to the questionForm variable*/
+        const questionInput = document.getElementById('questionInput'); /* Retrieves the question input element by its id and assigns it to the questionInput variable*/
+
+        questionForm.addEventListener('submit', async (e) => { /*Adds an event listener to the question form's submit event. When the form is submitted, the provided callback function is executed.*/
+            e.preventDefault(); /* Prevents the default form submission behavior, which would cause a page refresh.*/
+            const question = questionInput.value.trim(); /*Retrieves the value of the question input field and trims any leading or trailing whitespace, assigning it to the question variable.*/
+            if (question === '') return; /*Checks if the question is empty. If it is, the function returns early and no further actions are taken.*/
+
+            const response = await fetch(`/ask?question=${encodeURIComponent(question)}`); 
+            /* Sends a GET request to the "/ask" endpoint, passing the encoded question as a query parameter. The response is assigned to the response variable.*/
+            const data = await response.json(); /* Parses the response body as JSON and assigns it to the data variable.*/
+            appendMessage(question, 'question'); /*Calls the appendMessage function, passing the question and the role "question" to add the question message to the chat window.*/
+            appendMessage(data.answer.content, 'answer'); /*Calls the appendMessage function, passing the answer content from the response and the role "answer" to add the answer message to the chat window.*/
+            questionInput.value = ''; /* Clears the question input field by setting its value to an empty string.*/
+        });
+
+        function appendMessage(content, role) {
+            /*.This function creates a message container and message element, adds the appropriate CSS classes, appends the message to the container, and appends the container to the chat window.
+             Finally, it scrolls the chat window to the bottom to display the latest message.*/
+            const messageContainer = document.createElement('div');
+            const message = document.createElement('p');
+            message.textContent = content;
+            messageContainer.classList.add('message-container');
+            messageContainer.classList.add(role);
+            messageContainer.appendChild(message);
+            chatWindow.appendChild(messageContainer);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+    </script>
+</body>
+</html>

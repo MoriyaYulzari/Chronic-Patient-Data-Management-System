@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Background/favicon.png" type="">
+    <link rel="stylesheet" href="style_find.css">
+</head>
+
+<body>
+    <form action="/readbyID" method="get">
+        <!--Creates a form element with the action attribute set to "/readbyID" and the HTTP method set to "get".
+        When the form is submitted, it will send a GET request to the specified action URL.-->
+        <label for="ID">Enter patient ID to get their details:</label> <!--Displays a label for the input field, prompting the user to enter a patient ID.-->
+        <input type="text" name="ID" id="ID" style="margin: 0 auto;" /> 
+        <!--Defines a text input field with the name "ID" and the id "ID".
+         The style attribute sets the margin to "0 auto", horizontally centering the input field.-->
+        <input type="submit" value="Find them" style="margin: 0 auto;" />
+        <!--Defines a submit button with the value "Find them".
+         The style attribute sets the margin to "0 auto", horizontally centering the button.-->
+    </form>
+</body>
+</html>

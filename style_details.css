@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+  display: flex; /*flexible box layout for its child elements*/
+  justify-content: center; /*centers the flex items along the main axis (vertical)*/
+  align-items: center; /*centers the flex items along the cross axis (horizontal)*/
+  height: 100vh; /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+  margin: 0; /*removes any default margins applied to the body element.*/
+  padding: 0; /*removes any default padding applied to the body element*/
+  background-image: url("Background/background_upload.jpg"); /*sets the background image*/
+  background-repeat: no-repeat; /*prevents the background image from repeating*/
+  background-size: cover; /*scales the background image to cover the entire body element*/
+  font-weight: 300; /*sets the font weight of the tex*/
+  font-family: 'Open Sans', sans-serif; /*sets the font*/
+}
+
+.container {
+  display: flex; /*flexible box layout for its child elements*/
+  align-items: center; /* centers the flex items along the cross axis (horizontal)*/
+  background-color: white;  /*sets the background color of the container to white*/
+  border: 1px solid #ccc; /*width and color of the frame of the container*/
+  border-radius: 5px; /*gives the container rounded corners*/
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*adds a subtle box shadow to the container, giving it a slight elevation effect*/
+}
+
+.details {
+  flex: 1; /*sets the flex property to 1, which allows the element to grow and occupy available space within its flex container.*/
+  padding: 20px; /*adds 20 pixels of padding on all sides of the element.*/
+}
+
+.image {
+  width: 400px; /*sets the width of the element*/
+  display: flex; /*specifies that the element should be displayed as a flex container*/
+  justify-content: center; /* centers the flex items horizontally within the container*/
+  align-items: center; /*centers the flex items vertically within the container*/
+}
+
+h1 {
+  text-align: center; /*centers the text horizontally*/
+  margin-bottom: 20px; /*adds 20 pixels of margin at the bottom of the element*/
+}
+
+form {
+  display: flex; /*specifies that the element should be displayed as a flex container.*/
+  flex-direction: column; /*arranges the flex items vertically in a column*/
+}
+
+table {
+  width: 100%; /*sets the width of the table to 100% of its container*/
+  border-collapse: collapse; /*collapses the borders of adjacent table cells into a single border.*/
+}
+
+th,td {
+  padding: 5px; /*adds 5 pixels of padding on all sides of the table cells.*/
+  border: none; /*removes the border around the table cells*/
+  background-color:#f2f2f2; /*sets the background color of the table cells to a light gray*/
+}
+
+input[type="text"],
+input[type="date"],
+input[type="file"] {
+  width: 80%; /*sets the width of the input elements to 80% of their container.*/
+  padding: 5px; /*adds 5 pixels of padding on all sides of the input elements*/
+  margin-bottom: 10px; /* adds 10 pixels of margin at the bottom of the input elements*/
+  border: 1px solid #ccc; /*sets a 1-pixel solid border around the input elements with a color of grey*/
+  border-radius: 10px; /* rounds the corners of the input elements with a radius of 10 pixels.*/
+  background-color: #f2f2f2; /*sets the background color of the input elements to a light gray.*/
+}
+
+input[type="checkbox"] {
+  margin-bottom: 5px; /*adds 5 pixels of margin at the bottom of the checkbox elements*/
+}
+
+input[type="submit"] {
+  width: 50%; /*sets the width of the submit button to 50% of its container*/
+  margin: 0 auto; /*centers the submit button horizontally within its container*/
+  padding: 10px; /*adds 10 pixels of padding on all sides of the submit button.*/
+  background-color: #2c7c8b; /*sets the background color of the submit button*/
+  color: white; /*sets the text color of the submit button*/
+  border: none; /*removes the border around the submit button*/
+  border-radius: 10px; /*rounds the corners of the submit button with a radius of 10 pixels.*/
+  cursor: pointer; /*changes the cursor to a pointer when hovering over the submit button.*/
+}
+
+input[type="submit"]:hover { /*targeting the submit button input elements when hovered over.*/
+  background-color: #2c7c8b; /*sets the background color of the submit button to the same specific teal shade when hovered over.*/
+}
+
+

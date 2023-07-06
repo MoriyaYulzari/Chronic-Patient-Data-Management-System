@@ -1,0 +1,51 @@
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+    body {
+            display: flex; /*flexible box layout for its child elements*/
+            flex-direction: column; /*stacks the flex items vertically.*/
+            align-items: center; /* centers the flex items along the cross axis (horizontal)*/
+            justify-content: center;  /*centers the flex items along the main axis (vertical)*/
+            height: 100vh;  /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+            margin: 0; /*removes any default margins applied to the body element.*/
+            padding: 0;  /*removes any default padding applied to the body element*/
+            background-image: url("Background/chat_background.webp"); /*sets the background image*/
+            font-weight: 300; /*sets the font weight of the text*/
+            font-family: 'Open Sans', sans-serif; /*sets the font*/
+        }
+
+        .chat-window {
+            width: 900px; /* Sets the width of the chat window to 900 pixels.*/
+            padding: 20px; /*Adds 20 pixels of padding to the chat window.*/
+            background-color: #ffffff; /* Sets the background color of the chat window to white.*/
+            border-radius: 5px; /*Adds rounded corners with a 5-pixel radius to the chat window.*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /*Applies a box shadow effect to the chat window for a raised appearance.*/
+            margin-bottom: 20px; /*Adds a bottom margin of 20 pixels to create space below the chat window.*/
+            overflow-y: auto; /* Enables vertical scrolling within the chat window if the content exceeds its height.*/
+            max-height: 70vh; /*Sets the maximum height of the chat window to 70% of the viewport height.*/
+        }
+
+        .message { /*Defines a CSS class selector for individual chat messages.*/
+            margin-bottom: 10px; /*Adds a bottom margin of 10 pixels to create spacing between messages.*/
+        }
+
+        .message-container { /* Defines a CSS class selector for the container of each message.*/
+            display: flex; /*Configures the message container to use a flex layout for flexible positioning of message elements.*/
+        }
+
+        .question { /*Defines a CSS class selector for question messages.*/
+            font-weight: bold; /*Sets the font weight of question messages to bold*/
+            text-align: left; /*Aligns the text within question messages to the left.*/
+            color: #ffffff; /*Sets the text color of question messages to white.*/
+            background-color: #46879f; /*Sets the background color of question messages to a shade of blue.*/
+            border-radius: 15px 15px 15px 5px; /*Adds rounded corners to question messages, with different radii for each corner.*/
+            padding: 8px; /*Adds 8 pixels of padding around question messages.*/
+            margin-right: 10px; /*Adds a right margin of 10 pixels to create spacing between question and answer messages*/
+        }
+
+        .answer { /* Defines a CSS class selector for answer messages.*/
+            text-align: left; /* Aligns the text within answer messages to the left.*/
+            color: #000000; /* Sets the text color of answer messages to black.*/
+            background-color: #e5e5ea; /* Sets the background color of answer messages to a light gray.*/
+            border-radius: 15px 15px 5px 15px; /*Adds rounded corners to answer messages, with different radii for each corner.*/
+            padding: 8px; /* Adds 8 pixels of padding around answer messages.*/
+            margin-left: 10px; /* Adds a left margin of 10 pixels to create spacing between answer and question messages.*/
+        }

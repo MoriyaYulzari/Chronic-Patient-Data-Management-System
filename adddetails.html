@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Patient</title> <!--sets the title of the HTML document-->
+    <link rel="stylesheet" href="style_details.css"> <!--links an external CSS file for styling the HTML content-->
+    <link rel="shortcut icon" href="Background/favicon.png" type=""> <!--sets the shortcut icon for the webpage-->
+</head>
+<body>
+    <div class="container">
+        <div class="details">
+            <h1>Upload Patient Details</h1> <!--page title-->
+            <form action="/upload" method="POST" enctype="multipart/form-data"> 
+                <!--this element specifies the action as "/upload" from the server, and the method as "POST" to handle the form submission.-->
+                <table>
+                    <!--<tr> represent table rows, <th> represet table headers, and <td> represent table data cells.
+                         They are used to create a tabular layout for the form fields.-->
+                    <tr>
+                        <!--from ID to medical conditions-allow users to upload information for patient details.-->
+                        <th><label for="ID">ID:</label></th>
+                        <td><input type="text" name="ID" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="firstname">First Name:</label></th>
+                        <td><input type="text" name="firstname" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="lastname">Last Name:</label></th>
+                        <td><input type="text" name="lastname" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="birthdate">Birth Date:</label></th>
+                        <td><input type="date" name="birthdate" required></td>
+                    </tr>
+                    <tr>
+                        <th><label>Medical Condition:</label></th>
+                        <td>
+                            <input type="checkbox" name="medicalCondition" value="Heart Failure"> Heart Failure<br>
+                            <input type="checkbox" name="medicalCondition" value="Chronic renal failure"> Chronic renal failure<br>
+                            <input type="checkbox" name="medicalCondition" value="Diabetes"> Diabetes<br>
+                            <input type="checkbox" name="medicalCondition" value="Chronic hepatitis"> Chronic hepatitis<br>
+                            <input type="checkbox" name="medicalCondition" value="Metabolic syndrome"> Metabolic syndrome<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="image">Image - only JPG:</label></th>
+                        <td><input type="file" name="image" accept="image/*" required data-placeholder="No file chosen" value="Choose File">
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Upload"> <!--element with the type "submit" represents a submit button for the form-->
+            </form>
+        </div>
+        <div class="image">
+            <img src="designImage/doctor.jpg" alt="Patient Image" style="max-width: 100%; height: auto;">
+            <!--displays an image. The "alt" attribute provides alternative text for the image, 
+            and the style attribute sets the maximum width to 100% and allows the height to adjust automatically.-->
+        </div>
+    </div>
+</body>
+</html>

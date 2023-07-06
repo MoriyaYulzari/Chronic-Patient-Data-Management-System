@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"); /* imports a stylesheet from the Google Fonts API*/
+    body {
+            display: flex; /*flexible box layout for its child elements*/
+            flex-direction: column; /*stacks the flex items vertically.*/
+            justify-content: center; /*centers the flex items along the main axis (vertical)*/
+            align-items: center; /*centers the flex items along the cross axis (horizontal)*/
+            height: 100vh; /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+            margin: 0; /*removes any default margins applied to the body element.*/
+            padding: 0; /*removes any default padding applied to the body element*/
+            background-image: url("Background/medical_background.avif"); /*sets the background image*/
+            background-repeat: no-repeat; /*prevents the background image from repeating*/
+            background-size: cover; /*scales the background image to cover the entire body element*/
+            font-family: "Open Sans", sans-serif; /*sets the font*/
+            font-weight: bold; /*sets the text to be bold*/
+        }
+
+        table-window {
+            width: 500px; /*sets the width of the element*/
+            padding: 20px; /*adds 20 pixels of padding on all sides of the element.*/
+            background-color: #ffffff; /*sets the background color of the window*/
+            border-radius: 5px; /*gives the container rounded corners*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /*adds a subtle box shadow to the container, giving it a slight elevation effect*/
+            margin-bottom: 20px;  /*adds a 20-pixel margin at the bottom*/
+            overflow-y: auto; /*sets the vertical overflow behavior for the element. allowing the user to scroll and view the overflowing content.*/
+            max-height: 70vh; /*sets the maximum height of the element to 70% of the viewport height-available vertical space */
+        }
+
+        h1 {
+            text-align: center; /*centers the text horizontally within the element*/
+            font-size: 30px; /*sets the size of the text*/
+            margin-bottom: 20px; /*adds a 20-pixel margin at the bottom*/
+            font-weight: bold /*sets the text to be bold*/
+        }
+
+        .links { /*defines the styles for elements with the class "links"*/
+            text-align: center; /*centers the text horizontally within the element*/
+        }
+
+        .links a {/*the styles for anchor elements within the "links" class.*/
+            display: block; 
+            font-size: 18px; /*size of the links text*/
+            margin-bottom: 10px; /*adds a 10-pixel margin at the bottom*/
+            color: #2c7c8b; /*sets the text color of the links*/
+            text-decoration: none; /*removes the default text decoration, to ensures that the text content within the element does not have any additional visual styling*/
+            font-weight: bold; /*sets the text to bold*/
+        }

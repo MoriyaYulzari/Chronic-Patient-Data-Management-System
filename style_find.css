@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+    body {
+            display: flex; /*flexible box layout for its child elements*/
+            justify-content: center; /*centers the flex items along the main axis (vertical)*/
+            align-items: center; /*centers the flex items along the cross axis (horizontal)*/
+            height: 100vh; /*sets the height of the body to be 100 viewport height units, making the body take up the full height */
+            margin: 0; /*removes any default margins applied to the body element.*/
+            padding: 0; /*removes any default padding applied to the body element*/
+            background-image: url("Background/chat_background.webp"); /*sets the background image*/
+            font-weight: 300; /*sets the font weight of the tex*/
+            font-family: 'Open Sans', sans-serif; /*sets the font*/
+        }
+
+        form {
+            display: flex; /*flexible box layout for its child elements*/
+            flex-direction: column; /*stacks the flex items vertically.*/
+            align-items: center; /*centers the flex items along the main axis (vertical)*/
+            width: 300px; /*sets the width*/
+            padding: 20px; /*adds 20 pixels of padding around the content of the form*/
+            background-color: #ffffff; /*sets the background color of the form to white*/
+            border-radius: 5px; /*gives the container rounded corners*/
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  /*adds a subtle box shadow to the container, giving it a slight elevation effect*/
+        }
+
+        form input[type="text"] { /* the text input element within the form*/
+            width: 100%; /*sets the width to 100%, ensuring it spans the entire available width. */
+            margin-bottom: 10px;  /*adds a 10-pixel margin at the bottom*/
+            padding: 8px 10px; /*8px for the top and bottom, and 10px for the right and left*/
+            font-size: 16px; /*size of text*/
+            border: 1px solid #ccc; /*sets the border properties of the table to have a 1-pixel width, a solid line style, and a color*/
+            border-radius: 3px; /*gives the container rounded corners*/
+            box-sizing: border-box; /*ensures that the specified width and height values for these input elements include any padding*/
+        }
+
+        form input[type="submit"] {
+            width: 100%; /*sets the width to 100%, ensuring it spans the entire available width. */
+            padding: 10px; /*adds 10 pixels of padding within each table cell, creating space*/ 
+            font-size: 16px; /*the size of the text*/
+            color: #ffffff;  /*sets the color of the text subbmit to white*/
+            background-color: #46879f;  /*sets the background color of the form submit to blue-shade*/
+            border: none; /*removes the border around the cells*/
+            border-radius: 3px; /*make the form round corners*/
+            cursor: pointer; /*when the mouse cursor hovers over the submit button, it will change to a pointer shape*/
+            box-sizing: border-box; /*ensuring that the total width and height of an element remain fixed*/
+        }
+    
