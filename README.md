@@ -14,10 +14,15 @@ https://github.com/MoriyaYulzari/Chronic-Patient-Data-Management-System.git
 -The system will engage in a conversation with Chat GPT and provide answers related to the patient's health condition.
 
 **Technologies Used**
+
 -Node.js
+
 -Express.js
+
 -MongoDB, using Mongoose
+
 -Imagga API (for image tagging)
+
 -OpenAI API (for chat functionality)
 
 **Contributing**
