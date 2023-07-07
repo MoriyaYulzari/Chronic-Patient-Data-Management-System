@@ -5,12 +5,20 @@ https://github.com/MoriyaYulzari/Chronic-Patient-Data-Management-System.git
 
 **Usage**
 *Upload Patient Data*-
--Send a POST request to the /upload endpoint with the patient details, including first name, last name, date of birth, photo, and five potential medical conditions. The system will save the data and perform image tagging on the uploaded photo.
+
+-Send a POST request to the /upload endpoint with the patient details, including first name, last name, date of birth, photo, and five potential medical conditions. The 
+system will save the data and perform image tagging on the uploaded photo.
+
 *Retrieve Patient Data*-
+
 -Send a GET request to the /readbyID endpoint with the patient's ID as a query parameter.
+
 -The system will retrieve the patient's data and display it on the patient's card.
+
 *Engage in a Conversation*-
+
 -Send a GET request to the /ask endpoint with the question as a query parameter.
+
 -The system will engage in a conversation with Chat GPT and provide answers related to the patient's health condition.
 
 **Technologies Used**
